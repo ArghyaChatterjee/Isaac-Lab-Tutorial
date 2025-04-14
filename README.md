@@ -200,5 +200,6 @@ Isaac Lab provides the tools you’ll need to create your own Tasks and Workflow
 # Resources
 - How to build Humanoid: NVIDIA Isaac Lab, how to walk [[video]](https://www.youtube.com/watch?v=xwOaStX0mxE)
 - How to Train a Custom Quadruped Robot to Walk Using Isaac Lab [[video]](https://www.youtube.com/watch?v=z62oU4hM1xM)
+- Isaac Sim 4.5 & Isaac Lab 2.0 | Installation & Overview [[video]](https://www.youtube.com/watch?v=CLFjtuH2NAQ)
 - Creating an Empty Scene - Isaac Lab Tutorial 1 [[video]](https://www.youtube.com/watch?v=sL1wCfp9tRU)
 - LycheeAI [[youtube]](https://www.youtube.com/@LycheeAI)
