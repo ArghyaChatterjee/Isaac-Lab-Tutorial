@@ -1,4 +1,4 @@
-# Isaac-Lab-Tutorial
+# Isaac Lab Tutorial
 This repository is all about Isaac Lab Tutorial for Imitation Learning.
 
 # Installation
