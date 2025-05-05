@@ -160,44 +160,41 @@ Attention
 For 50 series GPUs, please use the latest PyTorch nightly build instead of PyTorch 2.5.1, which comes with Isaac Sim:
 
 
- Linux
+```
 ./isaaclab.sh -p -m pip install --upgrade --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu128
+```
 
 Verifying the Isaac Lab installation
 To verify that the installation was successful, run the following command from the top of the repository:
 
-
- Linux
 # Option 1: Using the isaaclab.sh executable
 # note: this works for both the bundled python and the virtual environment
+```
 ./isaaclab.sh -p scripts/tutorials/00_sim/create_empty.py
-
+```
 # Option 2: Using python in your virtual environment
+```
 python scripts/tutorials/00_sim/create_empty.py
-
+```
 The above command should launch the simulator and display a window with a black viewport. You can exit the script by pressing Ctrl+C on your terminal. On Windows machines, please terminate the process from Command Prompt using Ctrl+Break or Ctrl+fn+B.
 
 Simulator with a black window.
-If you see this, then the installation was successful! 🎉
+If you see this, then the installation was successful! 
 
-Train a robot!
-You can now use Isaac Lab to train a robot through Reinforcement Learning! The quickest way to use Isaac Lab is through the predefined workflows using one of our Batteries-included robot tasks. Execute the following command to quickly train an ant to walk! We recommend adding --headless for faster training.
+## Train a robot:
+You can now use Isaac Lab to train a robot through Reinforcement Learning! The quickest way to use Isaac Lab is through the predefined workflows using one of our Batteries-included robot tasks. 
 
-
- Linux
+Execute the following command to quickly train an ant to walk. Adding --headless is recommended for faster training:
+```
 ./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/train.py --task=Isaac-Ant-v0 --headless
-
-… Or a robot dog!
-
-
- Linux
+```
+For a robot dog:
+ ```
 ./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/train.py --task=Isaac-Velocity-Rough-Anymal-C-v0 --headless
-
-Isaac Lab provides the tools you’ll need to create your own Tasks and Workflows for whatever your project needs may be. Take a look at our How-to Guides guides like Adding your own learning Library or Wrapping Environments for details.
-
-
+```
 
 # Resources
+- Getting Started with Isaac Lab [[video]](https://www.youtube.com/watch?v=SjVqOqEXXrY)
 - How to build Humanoid: NVIDIA Isaac Lab, how to walk [[video]](https://www.youtube.com/watch?v=xwOaStX0mxE)
 - How to Train a Custom Quadruped Robot to Walk Using Isaac Lab [[video]](https://www.youtube.com/watch?v=z62oU4hM1xM)
 - Isaac Sim 4.5 & Isaac Lab 2.0 | Installation & Overview [[video]](https://www.youtube.com/watch?v=CLFjtuH2NAQ)
