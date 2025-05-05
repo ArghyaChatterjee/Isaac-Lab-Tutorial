@@ -14,10 +14,6 @@ Please follow the Isaac Sim documentation to install the latest Isaac Sim releas
 
 From [Isaac Sim 4.5 release](https://docs.isaacsim.omniverse.nvidia.com/latest/installation/download.html), Isaac Sim binaries can be downloaded directly as a zip file. To check the minimum system requirements, refer to the documentation here.
 
-
- Linux
-Note
-
 We have tested Isaac Lab with Isaac Sim 4.5 release on Ubuntu 22.04 LTS with NVIDIA driver 535.129.
 
 From Isaac Sim 4.5 release, Isaac Sim binaries can be downloaded directly as a zip file. The below steps assume the Isaac Sim folder was unzipped to the ${HOME}/isaacsim directory.
@@ -30,10 +26,13 @@ To avoid the overhead of finding and locating the Isaac Sim installation directo
 
  Linux
 # Isaac Sim root directory
+```
 export ISAACSIM_PATH="${HOME}/isaacsim"
+```
 # Isaac Sim python executable
+```
 export ISAACSIM_PYTHON_EXE="${ISAACSIM_PATH}/python.sh"
-
+```
 For more information on common paths, please check the Isaac Sim documentation.
 
 Check that the simulator runs as expected:
@@ -41,25 +40,23 @@ Check that the simulator runs as expected:
 
  Linux
 # note: you can pass the argument "--help" to see all arguments possible.
+```
 ${ISAACSIM_PATH}/isaac-sim.sh
-
+```
 Check that the simulator runs from a standalone python script:
 
-
- Linux
 # checks that python path is set correctly
 ${ISAACSIM_PYTHON_EXE} -c "print('Isaac Sim configuration is now complete.')"
 # checks that Isaac Sim can be launched from python
+```
 ${ISAACSIM_PYTHON_EXE} ${ISAACSIM_PATH}/standalone_examples/api/isaacsim.core.api/add_cubes.py
-
+```
 Caution
 
 If you have been using a previous version of Isaac Sim, you need to run the following command for the first time after installation to remove all the old user data and cached variables:
-
-
- Linux
+```
 ${ISAACSIM_PATH}/isaac-sim.sh --reset-user
-
+```
 If the simulator does not run or crashes while following the above instructions, it means that something is incorrectly configured. To debug and troubleshoot, please check Isaac Sim documentation and the forums.
 
 Installing Isaac Lab
@@ -69,20 +66,13 @@ Note
 We recommend making a fork of the Isaac Lab repository to contribute to the project but this is not mandatory to use the framework. If you make a fork, please replace isaac-sim with your username in the following instructions.
 
 Clone the Isaac Lab repository into your workspace:
-
-
-SSH
+```
 git clone git@github.com:isaac-sim/IsaacLab.git
-
-HTTPS
-Note
-
+```
 We provide a helper executable isaaclab.sh that provides utilities to manage extensions:
-
-
- Linux
+```
 ./isaaclab.sh --help
-
+```
 usage: isaaclab.sh [-h] [-i] [-f] [-p] [-s] [-t] [-o] [-v] [-d] [-n] [-c] -- Utility to manage Isaac Lab.
 
 optional arguments:
@@ -101,12 +91,14 @@ optional arguments:
 Creating the Isaac Sim Symbolic Link
 Set up a symbolic link between the installed Isaac Sim root folder and _isaac_sim in the Isaac Lab directory. This makes it convenient to index the python modules and look for extensions shipped with Isaac Sim.
 
-
- Linux
-# enter the cloned repository
+# Enter the cloned repository
+```
 cd IsaacLab
+```
 # create a symbolic link
+```
 ln -s path_to_isaac_sim _isaac_sim
+```
 # For example: ln -s ${HOME}/isaacsim _isaac_sim
 
 Setting up the conda environment (optional)
@@ -114,21 +106,20 @@ Attention
 
 This step is optional. If you are using the bundled python with Isaac Sim, you can skip this step.
 
-Note
-
 If you use Conda, we recommend using Miniconda.
 
 The executable isaaclab.sh automatically fetches the python bundled with Isaac Sim, using ./isaaclab.sh -p command (unless inside a virtual environment). This executable behaves like a python executable, and can be used to run any python script or module with the simulator. For more information, please refer to the documentation.
 
 To install conda, please follow the instructions here. You can create the Isaac Lab environment using the following commands.
 
-
- Linux
 # Option 1: Default name for conda environment is 'env_isaaclab'
+```
 ./isaaclab.sh --conda  # or "./isaaclab.sh -c"
+```
 # Option 2: Custom name for conda environment
+```
 ./isaaclab.sh --conda my_env  # or "./isaaclab.sh -c my_env"
-
+```
 Once created, be sure to activate the environment before proceeding!
 
 conda activate env_isaaclab  # or "conda activate my_env"
@@ -140,19 +131,14 @@ Install dependencies using apt (on Linux only):
 # these dependency are needed by robomimic which is not available on Windows
 sudo apt install cmake build-essential
 Run the install command that iterates over all the extensions in source directory and installs them using pip (with --editable flag):
-
-
- Linux
+```
 ./isaaclab.sh --install # or "./isaaclab.sh -i"
+```
 
-Note
-
-By default, the above will install all the learning frameworks. If you want to install only a specific framework, you can pass the name of the framework as an argument. For example, to install only the rl_games framework, you can run
-
-
- Linux
+By default, the above will install all the learning frameworks. If you want to install only a specific framework, you can pass the name of the framework as an argument. For example, to install only the rl_games framework, you can run:
+```
 ./isaaclab.sh --install rl_games  # or "./isaaclab.sh -i rl_games"
-
+```
 The valid options are rl_games, rsl_rl, sb3, skrl, robomimic, none.
 
 Attention
@@ -176,7 +162,7 @@ To verify that the installation was successful, run the following command from t
 ```
 python scripts/tutorials/00_sim/create_empty.py
 ```
-The above command should launch the simulator and display a window with a black viewport. You can exit the script by pressing Ctrl+C on your terminal. On Windows machines, please terminate the process from Command Prompt using Ctrl+Break or Ctrl+fn+B.
+The above command should launch the simulator and display a window with a black viewport. You can exit the script by pressing Ctrl+C on your terminal. On Windows machines, please terminate the process from Command Prompt using `Ctrl+Break` or `Ctrl+fn+B`.
 
 Simulator with a black window.
 If you see this, then the installation was successful! 
